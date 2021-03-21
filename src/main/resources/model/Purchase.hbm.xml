@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
+
+    <class name="DataModule.Entity.Purchase" table="purchase">
+        <id name="id" column="id"/>
+        <property name="login" column="user_login"/>
+        <property name="productID" column="product_id"/>
+        <property name="sellerID" column="seller_id"/>
+        <property name="special" column="special_pacient"/>
+
+        <!--<many-to-one name="productID" column="product_id"
+                     class="DataModule.Entity.Products"
+                     cascade="save-update"/>
+        <many-to-one name="sellerID" column="seller_id"
+                     class="DataModule.Entity.Seller"
+                     cascade="none"/>
+        <many-to-one name="login" column="user_login"
+                     class="DataModule.Entity.Users"
+                     cascade="none"/>
+        <many-to-one name="special" column="special_pacient"
+                     class="DataModule.Entity.SpecialPatient"
+                     cascade="save-update"/>-->
+    </class>
+
+</hibernate-mapping>
