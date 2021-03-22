@@ -6,7 +6,9 @@
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
     <class name="DataModule.Entity.SpecialPatient" table="special_pacient">
-        <id name="id" column="id"/>
+        <id name="id" column="id">
+            <generator class = "identity"/>
+        </id>
         <property name="name" column="name"/>
         <property name="drug" column="med_name"/>
     </class>

@@ -38,7 +38,7 @@ public class SellerDAO implements Dao<Seller, Integer> {
     }
 
     @Override
-    public void update(Seller seller) {
+    public void update(@NotNull Seller seller) {
         try (final Session session = sessionFactory.openSession()) {
             session.beginTransaction();
             session.update(seller);

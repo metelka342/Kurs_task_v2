@@ -15,11 +15,22 @@ import javax.persistence.Table;
 //@Table(appliesTo = "users")
 public class Users {
     @Id
+    @Column(name = "id")
+    private int id;
+
     @Column(name = "login")
     private String login;
 
     @Column(name = "password")
     private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getLogin() {
         return login;
@@ -35,5 +46,13 @@ public class Users {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "Users" + "\n" +
+                "id=" + id + "\n" +
+                ", login='" + login + '\'' + "\n" +
+                ", password='" + password + '\'' + "\n";
     }
 }

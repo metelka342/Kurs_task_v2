@@ -1,6 +1,8 @@
 package LogicModule;
 
 import DataModule.Entity.Purchase;
+import DataModule.Entity.Users;
+import com.sun.istack.NotNull;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -40,11 +42,13 @@ public class PurchaseDAO implements Dao<Purchase, Integer> {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(@NotNull final Integer id) {
         try (final Session session = sessionFactory.openSession()) {
-        session.beginTransaction();
-        session.delete(id);
-        session.getTransaction().commit();
+            final Purchase purchase = new Purchase();
+            purchase.setId(id);
+            session.beginTransaction();
+            session.delete(purchase);
+            session.getTransaction().commit();
         }
     }
 }

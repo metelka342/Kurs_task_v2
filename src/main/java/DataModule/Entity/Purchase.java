@@ -72,4 +72,14 @@ public class Purchase {
     public void setSpecial(boolean special) {
         this.special = special;
     }
+
+    @Override
+    public String toString() {
+        return "Purchase" + "\n" +
+                "id=" + id + "\n" +
+                "login='" + login + '\'' + "\n" +
+                " productID=" + productID + "\n" +
+                "sellerID=" + sellerID + "\n" +
+                " special=" + special;
+    }
 }

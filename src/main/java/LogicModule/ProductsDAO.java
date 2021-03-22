@@ -2,6 +2,7 @@ package LogicModule;
 
 import DataModule.Entity.Products;
 import DataModule.Entity.Seller;
+import DataModule.Entity.Users;
 import com.sun.istack.NotNull;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -42,10 +43,12 @@ public class ProductsDAO implements Dao<Products, Integer> {
     }
 
     @Override
-    public void delete(@NotNull Integer id) {
+    public void delete(@NotNull final Integer id) {
         try (final Session session = sessionFactory.openSession()) {
+            final Products products = new Products();
+            products.setId(id);
             session.beginTransaction();
-            session.delete(id);
+            session.delete(products);
             session.getTransaction().commit();
         }
     }
@@ -56,4 +59,5 @@ public class ProductsDAO implements Dao<Products, Integer> {
             return session.getSession().createQuery("from Products").list();
         }
     }
+
 }

@@ -49,4 +49,12 @@ public class SpecialPatient {
     public void setDrug(String drug) {
         this.drug = drug;
     }
+
+    @Override
+    public String toString() {
+        return "SpecialPatient" + "\n" +
+                "id=" + id + "\n" +
+                " name='" + name + '\'' + "\n" +
+                "drug='" + drug;
+    }
 }

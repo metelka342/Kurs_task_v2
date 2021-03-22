@@ -2,6 +2,8 @@ package LogicModule;
 
 import DataModule.Entity.Products;
 import DataModule.Entity.SpecialPatient;
+import DataModule.Entity.Users;
+import com.sun.istack.NotNull;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -40,10 +42,12 @@ public class SpecialPacientDAO implements Dao<SpecialPatient, Integer> {
     }
 
     @Override
-    public void delete(Integer id) {
+    public void delete(@NotNull final Integer id) {
         try (final Session session = sessionFactory.openSession()) {
+            final SpecialPatient  patient = new SpecialPatient();
+            patient.setId(id);
             session.beginTransaction();
-            session.delete(id);
+            session.delete(patient);
             session.getTransaction().commit();
         }
     }

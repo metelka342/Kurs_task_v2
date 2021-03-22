@@ -97,4 +97,16 @@ public class Products {
     public void setCount(int count) {
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return "Product" + "\n" +
+                "id=" + id + "\n" +
+                " name='" + name + '\'' + "\n" +
+                " type='" + type + '\'' + "\n" +
+                " date='" + date + '\'' + "\n" +
+                " vendor='" + vendor + '\'' + "\n" +
+                " price=" + price + "\n" +
+                " count=" + count + "\n";
+    }
 }

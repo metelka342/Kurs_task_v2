@@ -6,7 +6,9 @@
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
     <class name="DataModule.Entity.Purchase" table="purchase">
-        <id name="id" column="id"/>
+        <id name="id" column="id">
+            <generator class = "identity"/>
+        </id>
         <property name="login" column="user_login"/>
         <property name="productID" column="product_id"/>
         <property name="sellerID" column="seller_id"/>

@@ -54,10 +54,9 @@ public class Seller {
 
     @Override
     public String toString() {
-        return "Seller " +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age
-                ;
+        return "Seller " + "\n" +
+                "id=" + id + "\n" +
+                " name='" + name + '\'' + "\n" +
+                " age=" + age;
     }
 }
