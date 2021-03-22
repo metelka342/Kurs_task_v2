@@ -3,10 +3,7 @@ package DataModule.Entity;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -16,6 +13,7 @@ import javax.persistence.Table;
 public class Users {
     @Id
     @Column(name = "id")
+    @PrimaryKeyJoinColumn(name = "id")
     private int id;
 
     @Column(name = "login")

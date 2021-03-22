@@ -537,7 +537,7 @@ public class GUInew extends JFrame {
                 textArea1.setText(productsDAO.read(Integer.parseInt(textField6.getText())).toString());
 
             } catch (Exception e) {
-                textArea1.setText("no such product, you've just created him");
+                textArea1.setText("no such product");
             }
         } finally {
             if (sessionFactory != null) {
@@ -631,7 +631,7 @@ public class GUInew extends JFrame {
                 textArea1.setText(sellerDAO.read(Integer.parseInt(textField12.getText())).toString());
 
             } catch (Exception e) {
-                textArea1.setText("no such seller, you've just created him");
+                textArea1.setText("no such seller");
             }
         } finally {
             if (sessionFactory != null) {
@@ -696,10 +696,10 @@ public class GUInew extends JFrame {
 
             try {
                 final Purchase purchase = new Purchase();
-                purchase.setLogin(textField1.getText());
-                purchase.setProductID(Integer.parseInt(textField10.getText()));
+                purchase.setLogin(textField10.getText());
+                purchase.setProductID(Integer.parseInt(textField6.getText()));
                 purchase.setSellerID(Integer.parseInt(textField12.getText()));
-                purchase.setSpecial(!textField4.getText().isEmpty());
+                purchase.setSpecial(!textField14.getText().isEmpty());
 
                 purchaseDAO.create(purchase);
                 textArea1.setText("purchase created");
@@ -725,7 +725,7 @@ public class GUInew extends JFrame {
                 textArea1.setText(purchaseDAO.read(Integer.parseInt(textField15.getText())).toString());
 
             } catch (Exception e) {
-                textArea1.setText("no such purchase, you've just created him");
+                textArea1.setText("no such purchase");
             }
         } finally {
             if (sessionFactory != null) {
@@ -744,10 +744,10 @@ public class GUInew extends JFrame {
 
             try {
                 final Purchase purchase = new Purchase();
-                purchase.setLogin(textField1.getText());
-                purchase.setProductID(Integer.parseInt(textField10.getText()));
+                purchase.setLogin(textField10.getText());
+                purchase.setProductID(Integer.parseInt(textField6.getText()));
                 purchase.setSellerID(Integer.parseInt(textField12.getText()));
-                purchase.setSpecial(!textField4.getText().isEmpty());
+                purchase.setSpecial(!textField14.getText().isEmpty());
                 purchase.setId(Integer.parseInt(textField15.getText()));
                 purchaseDAO.update(purchase);
                 textArea1.setText("purchase updated");
@@ -819,7 +819,7 @@ public class GUInew extends JFrame {
                 textArea1.setText(specialPacientDAO.read(Integer.parseInt(textField14.getText())).toString());
 
             } catch (Exception e) {
-                textArea1.setText("no such specialPatient, you've just created him");
+                textArea1.setText("no such specialPatient");
             }
         } finally {
             if (sessionFactory != null) {
@@ -842,7 +842,7 @@ public class GUInew extends JFrame {
                 specialPatient.setDrug(textField9.getText());
                 specialPatient.setId(Integer.parseInt(textField14.getText()));
 
-                specialPacientDAO.create(specialPatient);
+                specialPacientDAO.update(specialPatient);
                 textArea1.setText("specialPatient updated");
             } catch (Exception e) {
                 textArea1.setText("error");
@@ -866,7 +866,7 @@ public class GUInew extends JFrame {
                 specialPacientDAO.delete(Integer.parseInt(textField14.getText()));
                 textArea1.setText("deleted");
             } catch (Exception e) {
-                textArea1.setText("no such specialPacient");
+                textArea1.setText("no such specialPatient");
             }
         } finally {
             if (sessionFactory != null) {
@@ -884,7 +884,7 @@ public class GUInew extends JFrame {
 
 
             try {
-                final Users user = new Users();
+                Users user = new Users();
                 user.setLogin(textField10.getText());
                 user.setPassword(textField11.getText());
 
@@ -909,7 +909,7 @@ public class GUInew extends JFrame {
 
 
             try {
-                textArea1.setText(usersDAO.read(Integer.parseInt(textField13.getText())).toString());
+                textArea1.setText (String.valueOf(usersDAO.read(Integer.parseInt(textField13.getText()))));
 
             } catch (Exception e) {
                 textArea1.setText("no such user");
@@ -930,7 +930,7 @@ public class GUInew extends JFrame {
 
 
             try {
-                final Users user = new Users();
+                Users user = new Users();
                 user.setLogin(textField10.getText());
                 user.setPassword(textField11.getText());
 

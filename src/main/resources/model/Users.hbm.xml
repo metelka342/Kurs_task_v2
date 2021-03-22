@@ -6,7 +6,8 @@
 <hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping">
 
     <class name="DataModule.Entity.Users" table="users">
-        <id name="login" column="login"/>
+        <id name="id" column="id"/>
+        <property name="login" column="login"/>
         <property name="password" column="password"/>
     </class>
 </hibernate-mapping>
